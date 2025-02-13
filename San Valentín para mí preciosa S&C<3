@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🥺¿Quieres ser mi San Valentín?🥺</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Castellar&display=swap');
+#message {
+    font-size: 2em;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-top: 20px;
+}
+        body {
+            text-align: center;
+            font-family: 'Castellar', sans-serif;
+            background-color: #000000;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #FF0000;
+            font-size: 2.8em;
+            margin-top: 50px;
+            text-shadow: 2px 2px 5px #FFFFFF;
+        }
+
+        .container {
+            position: relative;
+            margin-top: 90px;
+        }
+
+        .btn {
+            font-size: 1.5em;
+            padding: 15px 25px;
+            border: none;
+            cursor: pointer;
+            border-radius: 50px;
+            font-family: 'Castellar', sans-serif;
+            transition: 0.3s;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-yes {
+            background-color: #ff4d6d;
+            color: black;
+            border: 2px solid #b30000;
+        }
+
+        .btn-yes:hover {
+            background-color: #e63950;
+        }
+
+        .btn-no {
+            position: absolute;
+            background-color: #666;
+            color: white;
+            border: 2px solid #333;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            opacity: 1.9;
+            animation: float 5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mi princesa linda ¿Quieres ser mi San Valentín?💗🥺</h1>
+    
+    
+    <div class="container">
+        <button class="btn btn-yes" onclick="sayYes()">Sí :3</button>
+        <button class="btn btn-no" id="noBtn" onmouseup="moveNo ()">No😑</button>
+    </div>
+
+    <p id="message" class="hidden">¡Sabía que dirías que sí mi preciosota!
+    por que el boton No, no sirve asi que no te quedaba de otra😆🥰❤️
+    asi que dejame agradecerte por todo este tiempo que llevamos juntos es algo demasiado lindo y especial para mi como no te imaginas y pues es el primero de muchos 14 de febrero que la pasaremos juntos🤞❤️ y pues esta era la sorpresa que te había dicho que cree una pagina web desde mi teléfono para proponerte que fueras mi san Valentín, TE QUIERO, TE ADORO, ME ENCANTAS, ME FASCINAS, TE AMOOOOO MUJER MÍA, NOVIA MÍA, MI PRINCESA LINDA😻💗.    Asi que como tu querias y me dijiste, nos esperan unas hamburguesas y muchos besos y abrazos y cariños mi reina bella 🤭💗🥰</p>
+    
+    <p id="extraMessage" class="hidden"> Enserio muchísimas gracias</p>
+    
+    <div class="hearts" id="hearts"></div>
+
+    <script>
+        let noClickCount = 0;
+function sayYes() {
+    document.getElementById("message").classList.remove("hidden");
+    document.getElementById("extraMessage").classList.remove("hidden"); // function sayYes() {
+  document.getElementById("message").classList.remove("hidden");
+  document.getElementById("extraMessage").classList.remove("hidden"); // Mostrar nuevo mensaje
+
+  for (let i = 0; i < 30; i++) {
+    let heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = Math.random() * 100 + "vh";
+    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+    document.getElementById("hearts").appendChild(heart);
+  }
+
+
+    for (let i = 0; i < 30; i++) {
+        let heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = Math.random() * 100 + "vh";
+        heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+        document.getElementById("hearts").appendChild(heart);
+    }
+}
+ 
+
+        function moveNo() {
+            let btn = document.getElementById("noBtn");
+
+            noClickCount++;
+
+            if (no < 5) {
+                let x = Math.random() * (window.innerWidth - 100);
+                let y = Math.random() * (window.innerHeight - 50);
+                btn.style.left = x + "px";
+                btn.style.top = y + "px";
+            } else {
+                btn.style.display = "none";  
+            }
+        }
+    </script>
+</body>
+</html>
